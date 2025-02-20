@@ -1,0 +1,188 @@
+/* Light Mode Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background-color: #f4f4f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.input-field {
+    width: calc(100% - 4px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn, .theme-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.theme-btn {
+    background-color: #333;
+    color: white;
+}
+
+.theme-btn:hover {
+    background-color: #555;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.nature-details {
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* Night Mode Styles */
+body.night-mode {
+    background-color: #1e1e1e;
+    color: #f4f4f9;
+}
+
+.night-mode .container {
+    background-color: #2c2c2c;
+}
+
+.night-mode .btn {
+    background-color: #007BFF;
+}
+
+.night-mode .btn:hover {
+    background-color: #0056b3;
+}
+
+.night-mode .theme-btn {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.night-mode .theme-btn:hover {
+    background-color: #ddd;
+}
+
+.night-mode .input-field {
+    background-color: #333;
+    color: white;
+    border: 1px solid #777;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
+.copyright a {
+    color: inherit;  /* Keeps the text color the same as surrounding text */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Makes it stand out */
+}
+
+.copyright a:hover {
+    text-decoration: underline; /* Underline on hover for visibility */
+}
+
+.night-mode .copyright {
+    color: #bbb;
+}
+
+.night-mode .copyright a {
+    color: #ddd;
+}
+
+.history-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.history-section h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.history-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.history-section li {
+    background-color: #f4f4f4;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.clear-btn {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+.clear-btn:hover {
+    background-color: #b02a37;
+}
+
+/* Night mode styles for history */
+.night-mode .history-section {
+    background-color: #222;
+    color: #ddd;
+    border: 1px solid #444;
+}
+
+.night-mode .history-section li {
+    background-color: #333;
+    color: #ddd;
+}
+
+/* Night mode for clear history button */
+.night-mode .clear-btn {
+    background-color: #bb2d3b;
+    color: white;
+}
+
+.night-mode .clear-btn:hover {
+    background-color: #9a202e;
+}
+
+.night-mode .history-section h3 {
+    color: #ddd;
+}
