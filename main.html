@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Gen 1 to Gen 3 Nature Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .nature-details {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+        .nature-details span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pokémon Gen 1 to Gen 3 Nature Calculator</h1>
+        <label for="experience">Enter Pokémon's total experience:</label>
+        <input type="text" id="experience" class="input-field" placeholder="Enter total experience">
+        <button class="btn" onclick="calculateNature()">Calculate Nature</button>
+
+        <div id="result" class="result"></div>
+        <div id="nature-details" class="nature-details"></div>
+    </div>
+
+    <script>
+        const natures = [
+            {name: "Hardy", remainder: 0, raises: "None", lowers: "None"},
+            {name: "Lonely", remainder: 1, raises: "Attack", lowers: "Defense"},
+            {name: "Brave", remainder: 2, raises: "Attack", lowers: "Speed"},
+            {name: "Adamant", remainder: 3, raises: "Attack", lowers: "Special Attack"},
+            {name: "Naughty", remainder: 4, raises: "Attack", lowers: "Special Defense"},
+            {name: "Bold", remainder: 5, raises: "Defense", lowers: "Attack"},
+            {name: "Docile", remainder: 6, raises: "None", lowers: "None"},
+            {name: "Relaxed", remainder: 7, raises: "Defense", lowers: "Speed"},
+            {name: "Impish", remainder: 8, raises: "Defense", lowers: "Special Attack"},
+            {name: "Lax", remainder: 9, raises: "Defense", lowers: "Special Defense"},
+            {name: "Timid", remainder: 10, raises: "Speed", lowers: "Attack"},
+            {name: "Hasty", remainder: 11, raises: "Speed", lowers: "Defense"},
+            {name: "Serious", remainder: 12, raises: "None", lowers: "None"},
+            {name: "Jolly", remainder: 13, raises: "Speed", lowers: "Special Attack"},
+            {name: "Naïve", remainder: 14, raises: "Speed", lowers: "Special Defense"},
+            {name: "Modest", remainder: 15, raises: "Special Attack", lowers: "Attack"},
+            {name: "Mild", remainder: 16, raises: "Special Attack", lowers: "Defense"},
+            {name: "Quiet", remainder: 17, raises: "Special Attack", lowers: "Speed"},
+            {name: "Bashful", remainder: 18, raises: "None", lowers: "None"},
+            {name: "Rash", remainder: 19, raises: "Special Attack", lowers: "Special Defense"},
+            {name: "Calm", remainder: 20, raises: "Special Defense", lowers: "Attack"},
+            {name: "Gentle", remainder: 21, raises: "Special Defense", lowers: "Defense"},
+            {name: "Sassy", remainder: 22, raises: "Special Defense", lowers: "Speed"},
+            {name: "Careful", remainder: 23, raises: "Special Defense", lowers: "Special Attack"},
+            {name: "Quirky", remainder: 24, raises: "None", lowers: "None"}
+        ];
+
+        function calculateNature() {
+            const experienceInput = document.getElementById('experience').value;
+            const resultDiv = document.getElementById('result');
+            const detailsDiv = document.getElementById('nature-details');
+
+            // Validate input
+            const experience = parseInt(experienceInput);
+            if (isNaN(experience) || experience < 0) {
+                resultDiv.textContent = "Please enter a valid positive integer for experience.";
+                resultDiv.style.color = "red";
+                detailsDiv.textContent = "";
+                return;
+            }
+
+            // Calculate the remainder
+            const remainder = experience % 25;
+
+            // Find the nature
+            const nature = natures.find(n => n.remainder === remainder);
+
+            // Display the result
+            if (nature) {
+                resultDiv.textContent = `The Pokémon's nature is: ${nature.name}`;
+                detailsDiv.innerHTML = `<span>Raises:</span> ${nature.raises}<br><span>Lowers:</span> ${nature.lowers}`;
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Something went wrong, please try again.";
+                resultDiv.style.color = "red";
+                detailsDiv.textContent = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
